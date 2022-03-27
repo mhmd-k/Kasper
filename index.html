@@ -34,6 +34,7 @@
                     <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <input type="search" name="search" id="search">
                 <div class="form">
                     <i class="fas fa-search"></i>
                 </div>
@@ -44,8 +45,15 @@
     <!-- start landing -->
     <div class="landing">
         <div class="opacity">
-            <div class="landing-img-1"></div>
-            <div class="landing-img-2"></div>
+            <div class="landing-img">
+                <img src="images/landing.jpg" alt="">
+            </div>
+            <div class="landing-img">
+                <img src="images/landing-2.jpg" alt="">
+            </div>
+            <div class="landing-img">
+                <img src="images/bird_winter_snow_branch_nature_93685_1920x1080.jpg" alt="">
+            </div>
         </div>
         <div class="content">
             <div class="text">
@@ -61,6 +69,7 @@
         <i class="fas fa-angle-right fa-2x" id="right-btn"></i>
         <ul class="dots">
             <li class="colored"></li>
+            <li></li>
             <li></li>
         </ul>
     </div>
@@ -116,10 +125,10 @@
         <div class="text">
             <h2>OUR DESIGN COMES WITH...</h2>
             <ul>
-                <li>Responsive Design</li>
-                <li>Modern And Clean Design</li>
-                <li>Clean Code</li>
-                <li>Browser Friendly</li>
+                <li><i class="fa-solid fa-desktop"></i>Responsive Design</li>
+                <li><i class="fa-solid fa-pen-clip"></i> Modern And Clean Design</li>
+                <li><i class="fa-solid fa-code"></i>Clean Code</li>
+                <li><i class="fa-brands fa-chrome"></i> Browser Friendly</li>
             </ul>
         </div>
     </div>
@@ -131,9 +140,9 @@
     </div>
     <div class="port">
         <ul>
-            <li class="active">All</li>
+            <li>All</li>
             <li>App</li>
-            <li>Photo</li>
+            <li class="active">Photo</li>
             <li>Web</li>
             <li>Print</li>
         </ul>
@@ -196,7 +205,7 @@
             </div>
         </div>
     </div>
-    <a href="#">MORE</a>
+    <button id="more">MORE</button>
     <div class="video">
         <video autoplay loop muted>
             <source src="images/awesome-video.mp4" type="video/mp4">
@@ -252,22 +261,40 @@
             <div class="test">
                 <h3>TESTIMONIALS</h3>
                 <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
-                <div class="cv">
-                    <img src="images/skills-01.jpg" alt="">
-                    <p>
-                        Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
-                        <span>John Doe, CEO</span>
-                    </p>
+                <div class="parent-cv">
+                    <div class="cv">
+                        <img src="images/skills-01.jpg" alt="">
+                        <p>
+                            Curabitur arcu erat, accumsan id imperdiet et, Mauris blandit aliquet elit, eget tincidunt.
+                            <span>John Doe, CEO</span>
+                        </p>
+                    </div>
+                    <div class="cv">
+                        <img src="images/skills-03.png" alt="">
+                        <p>
+                            Curabitur arcu erat, accumsan et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+                            <span>kate Doe, CEO</span>
+                        </p>
+                    </div>
                 </div>
-                <div class="cv">
-                    <img src="images/skills-02.jpg" alt="">
-                    <p>
-                        Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
-                        <span>John Doe, CEO</span>
-                    </p>
+                <div class="parent-cv">
+                    <div class="cv">
+                        <img src="images/skills-02.jpg" alt="">
+                        <p>
+                            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris , eget
+                            tincidunt.
+                            <span>John Doe, CEO</span>
+                        </p>
+                    </div>
+                    <div class="cv">
+                        <img src="images/skills-04.png" alt="">
+                        <p>
+                            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit.
+                            <span>John Doe, CEO</span>
+                        </p>
+                    </div>
                 </div>
                 <ul class="bullets">
-                    <li></li>
                     <li class="active"></li>
                     <li></li>
                 </ul>
@@ -279,25 +306,25 @@
                     <div class="prog-holder">
                         <h4>HTML & CSS</h4>
                         <div class="program">
-                            <span style="width: 95%" data-prog="95%"></span>
+                            <span data-prog="95%"></span>
                         </div>
                     </div>    
                     <div class="prog-holder">
                         <h4>Javascript</h4>
                         <div class="program">
-                            <span style="width: 90%" data-prog="90%"></span>
+                            <span data-prog="90%"></span>
                         </div>
                     </div>
                     <div class="prog-holder">
                         <h4>Php</h4>
                         <div class="program">
-                            <span style="width: 70%" data-prog="70%"></span>
+                            <span data-prog="70%"></span>
                         </div>
                     </div>
                     <div class="prog-holder">
                         <h4>Python</h4>
                         <div class="program">
-                            <span style="width: 90%" data-prog="90%"></span>
+                            <span data-prog="90%"></span>
                         </div>
                     </div>
                 </div>
