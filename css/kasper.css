@@ -188,6 +188,9 @@ header .container nav ul li a {
   padding: 40px 10px;
   transition: var(--main-transition);
 }
+.open {
+  display: flex !important;
+}
 header .container nav ul li a:hover ,
 header .container nav ul li a.active {
   color: var(--main-color);
