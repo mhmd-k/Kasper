@@ -3,11 +3,16 @@ let linksButton = document.querySelector(".list");
 let links = document.querySelector(".links");
 linksButton.onclick = function (e) {
     e.stopPropagation();
-    links.classList.toggle("open");
+    if (!links.classList.contains("open")) {
+        links.classList.add("open");
+    } else { 
+        links.classList.remove("open");
+    }
 };
-document.onclick = function () {
+function removeOpenClass() { 
     links.classList.remove("open");
 };
+document.addEventListener("click", removeOpenClass);
 // scroll to top button
 function scrollToTop() {
     if (window.scrollY >= 500) {
@@ -75,13 +80,14 @@ searchBtn.onclick = function (e) {
     search.style.padding = "5px";
     search.focus();
 };
-search.onclick = function (e) { 
+search.onclick = function (e) {
     e.stopPropagation();
-}
-document.onclick = function () {
+};
+function searchBar() { 
     search.style.width = "0";
     search.style.padding = "0";
 };
+document.addEventListener("click", searchBar);
 // portfolio button
 let pics = document.querySelectorAll(".pic");
 for (let i = 4; i < pics.length; i++) { 
