@@ -69,11 +69,18 @@ leftBtn.onclick = function () {
 // search bar
 let search = document.querySelector("[name='search']");
 let searchBtn = document.querySelector(".fa-search");
-
-searchBtn.onclick = function () {
+searchBtn.onclick = function (e) {
+    e.stopPropagation();
     search.style.width = "140px";
     search.style.padding = "5px";
     search.focus();
+};
+search.onclick = function (e) { 
+    e.stopPropagation();
+}
+document.onclick = function () {
+    search.style.width = "0";
+    search.style.padding = "0";
 };
 // portfolio button
 let pics = document.querySelectorAll(".pic");
