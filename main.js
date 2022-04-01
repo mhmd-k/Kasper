@@ -1,12 +1,12 @@
 // navbar
 let linksButton = document.querySelector(".list");
 let links = document.querySelector(".links");
-linksButton.onclick = function () {
-    if (links.style.display === "" || links.style.display === "none") {
-        links.style.display = "flex";
-    } else { 
-        links.style.display = "";
-    }
+linksButton.onclick = function (e) {
+    e.stopPropagation();
+    links.classList.toggle("open");
+};
+document.onclick = function () {
+    links.classList.remove("open");
 };
 // scroll to top button
 function scrollToTop() {
