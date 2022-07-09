@@ -31,70 +31,48 @@ scrollButton.onclick = function () {
   });
 };
 // landing buttons
-let leftBtn = document.querySelector("#left-btn");
-let rightBtn = document.querySelector("#right-btn");
 let fatherPics = document.querySelector(".opacity");
-let coloredLi = document.querySelectorAll("ul.dots li");
+let picsNumber = fatherPics.children.length;
+let coloredLi = Array.from(document.querySelectorAll("ul.dots li"));
 let s = 0;
-coloredLi[0].addEventListener("click", function () {
-  coloredLi.forEach((e) => {
-    e.className = "";
-  });
-  fatherPics.style.left = "0";
-  s = 0;
-  coloredLi[0].className = "colored";
-});
-coloredLi[1].addEventListener("click", function () {
-  coloredLi.forEach((e) => {
-    e.className = "";
-  });
-  fatherPics.style.left = "-100%";
-  coloredLi[1].className = "colored";
-  s = 1;
-});
-coloredLi[2].addEventListener("click", function () {
-  coloredLi.forEach((e) => {
-    e.className = "";
-  });
-  fatherPics.style.left = "-200%";
-  coloredLi[2].className = "colored";
-  s = 2;
-});
-rightBtn.onclick = function () {
-  coloredLi.forEach((e) => {
-    e.className = "";
-  });
-  s++;
-  if (s === 1) {
-    fatherPics.style.left = "-100%";
-    coloredLi[1].className = "colored";
-  } else if (s === 2) {
-    fatherPics.style.left = "-200%";
-    coloredLi[2].className = "colored";
-  } else if (s === 3) {
-    fatherPics.style.left = "0";
-    s = 0;
-    coloredLi[0].className = "colored";
-  }
-};
-leftBtn.onclick = function () {
-  coloredLi.forEach((e) => {
-    e.className = "";
-  });
+let left = 0;
+document.querySelector("#left-btn").addEventListener("click", function () {
   if (s === 0) {
-    s = 2;
-    fatherPics.style.left = "-200%";
-    coloredLi[2].className = "colored";
-  } else if (s === 2) {
+    s = picsNumber - 1;
+  } else {
     s--;
-    fatherPics.style.left = "-100%";
-    coloredLi[1].className = "colored";
-  } else if (s === 1) {
-    s--;
-    fatherPics.style.left = "0";
-    coloredLi[0].className = "colored";
   }
-};
+  left = s * 100;
+  fatherPics.style.left = `-${left}%`;
+  coloredLi.forEach((e) => {
+    e.classList.remove("colored");
+  });
+  coloredLi[s].classList.add("colored");
+});
+document.querySelector("#right-btn").addEventListener("click", function () {
+  if (s === picsNumber - 1) {
+    s = 0;
+  } else {
+    s++;
+  }
+  left = s * 100;
+  fatherPics.style.left = `-${left}%`;
+  coloredLi.forEach((e) => {
+    e.classList.remove("colored");
+  });
+  coloredLi[s].classList.add("colored");
+});
+coloredLi.forEach((e) => {
+  e.addEventListener("click", function () {
+    coloredLi.forEach((ele) => {
+      ele.classList.remove("colored");
+    });
+    e.classList.add("colored");
+    s = coloredLi.indexOf(e);
+    left = s * 100;
+    fatherPics.style.left = `-${left}%`;
+  });
+});
 // search bar
 let search = document.querySelector("[name='search']");
 let searchBtn = document.querySelector(".fa-search");
@@ -186,3 +164,6 @@ window.addEventListener("scroll", function () {
     });
   }
 });
+// copyright
+let copyright = document.querySelector("#copyright");
+copyright.innerHTML = new Date().getFullYear();
