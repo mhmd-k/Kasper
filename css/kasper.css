@@ -236,13 +236,14 @@ header .container nav .form i {
   width: 100%;
   height: 100vh;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .landing .opacity {
   width: 300%;
   height: 100%;
   position: absolute;
   left: 0;
+  top: 0;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -263,7 +264,7 @@ header .container nav .form i {
 }
 .landing .opacity .landing-img {
   height: 100%;
-  width: 100%;
+  width: 34%;
   overflow: hidden;
   transition: 2s;
   -webkit-transition: 2s;
@@ -1171,7 +1172,7 @@ footer .foot .icons {
 footer .foot p:last-of-type {
   padding: 50px 0 0 0;
 }
-footer .foot p:last-of-type span {
+footer .foot p:last-of-type span:last-of-type {
   color: var(--main-color);
   font-weight: bold;
 }
